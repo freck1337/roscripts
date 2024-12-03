@@ -7,7 +7,6 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      text-align: center;
       background-color: #111; /* Siyah arka plan */
       color: white; /* Beyaz metin */
       margin: 0;
@@ -22,6 +21,7 @@
     h1 {
       font-size: 32px;
       margin-bottom: 20px;
+      font-weight: bold;
     }
 
     .image-section {
@@ -37,32 +37,17 @@
       object-fit: cover;
       cursor: pointer;
       transition: transform 0.3s;
+      border-radius: 8px; /* Yuvarlatılmış köşe */
     }
 
     .image-section img:hover {
       transform: scale(1.1); /* Hover efektiyle resmin büyümesi */
     }
 
-    .scripts {
-      display: none; /* Başlangıçta metinler gizlenmiş olacak */
-      margin-top: 20px;
-      font-size: 18px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .scripts h2 {
-      color: #4CAF50; /* Başlıklar için yeşil renk */
-    }
-
-    .scripts p {
-      font-size: 16px;
-    }
   </style>
 </head>
 <body>
-  <h1>Welcome! Only registered users can view scripts.</h1>
+  <h1>Hoş Geldiniz! Lütfen Aşağıdaki Resimlerden Birine Tıklayın.</h1>
   
   <!-- Resimler -->
   <div class="image-section">
@@ -71,32 +56,17 @@
     <img src="/images/image3.jpg" alt="MM2" id="image3">
   </div>
 
-  <!-- Metinler (Başlangıçta gizlenmiş) -->
-  <div class="scripts" id="scripts">
-    <h2>Script 1: Example Script</h2>
-    <p>This is the first example script for registered users.</p>
-
-    <h2>Script 2: Another Example</h2>
-    <p>This is another example script for registered users.</p>
-  </div>
-
   <script>
-    // Sayfa yüklendiğinde localStorage'da kullanıcı durumu kontrol edilir
-    if (localStorage.getItem('userLoggedIn') === 'true') {
-      // Kullanıcı kayıtlıysa, metinleri göster
-      document.getElementById('scripts').style.display = 'block';
-    } else {
-      // Kullanıcı kayıtlı değilse, tıklama ile kayıt sayfasına yönlendir
-      document.getElementById('image1').addEventListener('click', function() {
-        window.location.href = 'register.html';
-      });
-      document.getElementById('image2').addEventListener('click', function() {
-        window.location.href = 'register.html';
-      });
-      document.getElementById('image3').addEventListener('click', function() {
-        window.location.href = 'register.html';
-      });
-    }
+    // Resimlere tıklanarak yönlendirme yapılır
+    document.getElementById('image1').addEventListener('click', function() {
+      window.location.href = 'scripts.html'; // image1'e tıklayınca scripts sayfasına yönlendirme
+    });
+    document.getElementById('image2').addEventListener('click', function() {
+      window.location.href = 'scripts.html'; // image2'ye tıklayınca scripts sayfasına yönlendirme
+    });
+    document.getElementById('image3').addEventListener('click', function() {
+      window.location.href = 'scripts.html'; // image3'e tıklayınca scripts sayfasına yönlendirme
+    });
   </script>
 </body>
 </html>
