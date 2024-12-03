@@ -110,7 +110,7 @@
         if (response.ok) {
           // Başarıyla gönderildiğinde, kullanıcıyı scripts sayfasına yönlendirme
           localStorage.setItem('userLoggedIn', 'true');
-          window.location.href = '/scripts.html'; // Kayıt sonrası script sayfasına yönlendir
+          window.location.href = 'roscripts/scripts.html'; // Kayıt sonrası script sayfasına yönlendir
         } else {
           // Hata durumunda mesaj göster
           document.getElementById('error-message').innerText = 'Bir hata oluştu, tekrar deneyin.';
