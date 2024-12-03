@@ -15,19 +15,39 @@
       margin: 20px;
       cursor: pointer;
     }
+    .scripts {
+      display: none; /* Başlangıçta metinler gizlenmiş olacak */
+      margin-top: 20px;
+      font-size: 18px;
+    }
   </style>
 </head>
 <body>
   <h1>Welcome! Only registered users can view scripts.</h1>
+  
+  <!-- Resimler -->
   <div class="image-section">
-    <img src="/images/image1.jpg" alt="Mini Görsel 1" id="image1">
-    <img src="/images/image2.jpg" alt="Mini Görsel 2" id="image2">
-    <img src="/images/image3.jpg" alt="Mini Görsel 3" id="image3">
+    <img src="/images/image1.jpg" alt="BloxFruits" id="image1">
+    <img src="/images/image2.jpg" alt="JailBreak" id="image2">
+    <img src="/images/image3.jpg" alt="MM2" id="image3">
+  </div>
+
+  <!-- Metinler (Başlangıçta gizlenmiş) -->
+  <div class="scripts" id="scripts">
+    <h2>Script 1: Example Script</h2>
+    <p>This is the first example script for registered users.</p>
+
+    <h2>Script 2: Another Example</h2>
+    <p>This is another example script for registered users.</p>
   </div>
 
   <script>
-    if (!localStorage.getItem('userLoggedIn')) {
-      // Kullanıcı kayıtlı değilse, tıklandığında register.html'e yönlendir
+    // Sayfa yüklendiğinde localStorage'da kullanıcı durumu kontrol edilir
+    if (localStorage.getItem('userLoggedIn') === 'true') {
+      // Kullanıcı kayıtlıysa, metinleri göster
+      document.getElementById('scripts').style.display = 'block';
+    } else {
+      // Kullanıcı kayıtlı değilse, tıklama ile kayıt sayfasına yönlendir
       document.getElementById('image1').addEventListener('click', function() {
         window.location.href = 'register.html';
       });
