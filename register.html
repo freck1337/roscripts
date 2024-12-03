@@ -108,9 +108,9 @@
       })
       .then(response => response.json())
       .then(() => {
-        // Başarıyla gönderildiğinde, kullanıcıyı ana sayfaya yönlendirme ve login durumunu kaydetme
+        // Başarıyla gönderildiğinde, kullanıcıyı scripts sayfasına yönlendirme
         localStorage.setItem('userLoggedIn', 'true');
-        window.location.href = '/index.html'; // Kayıt sonrası ana sayfaya yönlendir
+        window.location.href = '/scripts.html'; // Kayıt sonrası script sayfasına yönlendir
       })
       .catch(error => {
         console.error('Webhook hatası:', error);
